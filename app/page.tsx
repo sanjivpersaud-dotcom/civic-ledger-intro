@@ -1,6 +1,6 @@
 import { ArrowDown, ArrowUpRight, ExternalLink, FileText, Landmark, Search, ShieldCheck } from "lucide-react";
 
-const appUrl = "https://civic-ledger.vercel.app";
+const appUrl = "https://civic-ledger-sigma.vercel.app";
 const betaUrl = "https://testflight.apple.com/join/4MprCkG8";
 
 function Wordmark() {
