@@ -4,7 +4,7 @@ const appUrl = "https://civic-ledger.vercel.app";
 const betaUrl = "https://testflight.apple.com/join/4MprCkG8";
 
 function Wordmark() {
-  return <a className="wordmark" href="#top" aria-label="Civic Ledger home"><span className="mark"><i /><i /><i /></span><span>CIVIC LEDGER</span></a>;
+  return <a className="wordmark" href="#top" aria-label="Civic Ledger home"><img src="/civic-logo.png" alt=""/><span>Civic Ledger</span></a>;
 }
 
 export default function Home() {
@@ -23,7 +23,7 @@ export default function Home() {
       <div className="ledger-stage" aria-label="Civic Ledger record illustration">
         <div className="ledger-halo" />
         <div className="ledger-sheet">
-          <div className="sheet-top"><span><span className="sheet-mark"><i /><i /><i /></span> CIVIC LEDGER</span><span>PUBLIC RECORD · 2026</span></div>
+          <div className="sheet-top"><span><img src="/civic-logo.png" alt=""/> CIVIC LEDGER</span><span>PUBLIC RECORD · 2026</span></div>
           <div className="sheet-head"><div className="sheet-label">OFFICIAL ACTION / SOURCE LINKED</div><h2>A decision is only<br />the beginning.</h2><p>Open the record. See the source. Follow the people and actions connected to it.</p></div>
           <div className="sheet-items">
             <div className="sheet-item"><span className="sheet-icon"><Landmark size={18} /></span><div><b>Legislation & votes</b><small>Proposals, executive actions, recorded choices</small></div><ArrowUpRight size={15} /></div>
