@@ -1,58 +1,66 @@
-import { ArrowDownRight, ArrowUpRight, ExternalLink, FileText, Landmark, Search, ShieldCheck } from "lucide-react";
+import { ArrowDown, ArrowUpRight, ExternalLink, FileText, Landmark, Search, ShieldCheck } from "lucide-react";
 
 const appUrl = "https://civic-ledger.vercel.app";
 const betaUrl = "https://testflight.apple.com/join/4MprCkG8";
 
+function Wordmark() {
+  return <a className="wordmark" href="#top" aria-label="Civic Ledger home"><span className="mark"><i /><i /><i /></span><span>CIVIC LEDGER</span></a>;
+}
+
 export default function Home() {
-  return <main>
-    <div className="grain" aria-hidden="true" />
+  return <main id="top">
     <header className="topbar">
-      <a className="wordmark" href="#top" aria-label="Civic Ledger home"><span className="mark"><i /><i /><i /></span><span>CIVIC LEDGER</span></a>
-      <nav><a href="#approach">Our approach</a><a href="#records">What you can follow</a></nav>
-      <a className="nav-cta" href={appUrl} target="_blank" rel="noreferrer">Open the app <ExternalLink size={14} /></a>
+      <Wordmark />
+      <nav><a href="#approach">About</a><a href="#records">The record</a></nav>
+      <a className="nav-link" href={betaUrl} target="_blank" rel="noreferrer">Try the beta <ArrowUpRight size={14} /></a>
     </header>
 
-    <section className="hero" id="top">
-      <div className="hero-copy">
-        <p className="eyebrow"><span className="live-dot" /> PUBLIC RECORD, MADE LEGIBLE</p>
-        <h1>Follow what<br />public officials <em>do.</em></h1>
-        <p className="intro">Civic Ledger brings public actions into view—votes, legislation, campaign finance, and the statements that shape a public record.</p>
-        <div className="hero-actions"><a className="button-primary" href={betaUrl} target="_blank" rel="noreferrer">Join the TestFlight beta <ArrowUpRight size={17} /></a><a className="text-link" href="#approach">How it works <ArrowDownRight size={15} /></a></div>
-        <div className="hero-note"><span className="rule" />Built from records you can open and check.</div>
-      </div>
-      <div className="hero-art" aria-label="Illustration of a public record ledger">
-        <div className="art-orbit orbit-one" /><div className="art-orbit orbit-two" />
-        <div className="record-card card-back"><span className="card-kicker">PUBLIC RECORD / 026</span><div className="ghost-lines"><i /><i /><i /></div><div className="back-stamp">CIVIC<br />ARCHIVE</div></div>
-        <div className="record-card card-front">
-          <div className="record-head"><span><Landmark size={14} /> THE RECORD</span><span className="record-date">2026</span></div>
-          <div className="record-title">A public action<br />has a paper trail.</div>
-          <div className="record-line"><span className="line-icon"><FileText size={14} /></span><div><b>Legislation & votes</b><small>Official action · source linked</small></div><span className="line-arrow">↗</span></div>
-          <div className="record-line"><span className="line-icon gold"><Search size={14} /></span><div><b>Funding & disclosures</b><small>Reported figures · dated</small></div><span className="line-arrow">↗</span></div>
-          <div className="record-line"><span className="line-icon green"><ArrowUpRight size={14} /></span><div><b>Endorsements & positions</b><small>Attributed statement · dated</small></div><span className="line-arrow">↗</span></div>
-          <div className="card-foot"><span>OPEN SOURCES</span><span className="foot-dashes">— — — — —</span><span>CHECK THE RECORD</span></div>
+    <section className="hero section-centered">
+      <p className="eyebrow">A CLEARER VIEW OF PUBLIC LIFE</p>
+      <h1>Follow the public record.</h1>
+      <p className="subhead">See what officials do, where the evidence comes from, and how one action connects to another.</p>
+      <div className="link-row"><a className="blue-link" href={betaUrl} target="_blank" rel="noreferrer">Join the TestFlight beta <ArrowUpRight size={16} /></a><a className="blue-link" href="#records">Explore the record <ArrowDown size={15} /></a></div>
+      <div className="ledger-stage" aria-label="Civic Ledger record illustration">
+        <div className="ledger-halo" />
+        <div className="ledger-sheet">
+          <div className="sheet-top"><span><span className="sheet-mark"><i /><i /><i /></span> CIVIC LEDGER</span><span>PUBLIC RECORD · 2026</span></div>
+          <div className="sheet-head"><div className="sheet-label">OFFICIAL ACTION / SOURCE LINKED</div><h2>A decision is only<br />the beginning.</h2><p>Open the record. See the source. Follow the people and actions connected to it.</p></div>
+          <div className="sheet-items">
+            <div className="sheet-item"><span className="sheet-icon"><Landmark size={18} /></span><div><b>Legislation & votes</b><small>Proposals, executive actions, recorded choices</small></div><ArrowUpRight size={15} /></div>
+            <div className="sheet-item"><span className="sheet-icon"><Search size={18} /></span><div><b>Campaign finance</b><small>Reported figures, filings, and disclosures</small></div><ArrowUpRight size={15} /></div>
+            <div className="sheet-item"><span className="sheet-icon"><FileText size={18} /></span><div><b>Endorsements & positions</b><small>Attributed statements, kept in context</small></div><ArrowUpRight size={15} /></div>
+          </div>
+          <div className="sheet-foot"><span>RECORDS WITH THEIR SOURCES</span><span>01 — 03</span></div>
         </div>
-        <div className="annotation"><span className="annotation-dot" />Traceable, not inferred</div>
+        <div className="stage-caption">Built to follow the trail.</div>
       </div>
-      <div className="hero-index"><span>01</span><span className="index-line"/><span>PUBLIC LIFE, IN CONTEXT</span></div>
     </section>
 
-    <section className="approach" id="approach">
-      <div className="section-label"><span>THE IDEA</span><span>01 — 03</span></div>
-      <div className="approach-grid"><h2>Not another<br />news cycle.</h2><div className="approach-copy"><p className="large-copy">A place to follow the <em>record</em> behind public life.</p><p>Policy debates move fast. The underlying records are scattered across agencies, filings, and official sites. Civic Ledger brings those threads together around the people and actions they document.</p><p>Each record keeps its source close, so you can see where information came from and judge it in context.</p><a className="inline-link" href={appUrl} target="_blank" rel="noreferrer">See the records <ArrowUpRight size={15} /></a></div></div>
+    <section className="split-feature" id="approach">
+      <div className="feature-copy"><p className="eyebrow">WHY CIVIC LEDGER</p><h2>Less noise.<br /><em>More context.</em></h2><p>Public information lives across official sites, filings, and government records. Civic Ledger brings documented actions together around the people they concern, with a path back to the original source.</p><a className="blue-link" href={appUrl} target="_blank" rel="noreferrer">See Civic Ledger <ArrowUpRight size={16} /></a></div>
+      <div className="feature-visual" aria-label="Connected public record documents"><div className="connection connection-a"/><div className="connection connection-b"/><div className="mini-record mini-one"><span>01 · ACTION</span><b>Roll call</b><i/><i/><i/></div><div className="mini-record mini-two"><span>02 · SOURCE</span><b>Official record</b><i/><i/><i/></div><div className="mini-record mini-three"><span>03 · CONTEXT</span><b>Related filing</b><i/><i/><i/></div><div className="connect-node">↗</div></div>
     </section>
 
-    <section className="records" id="records">
-      <div className="records-heading"><div><p className="eyebrow dark-eyebrow">A WIDER VIEW OF PUBLIC LIFE</p><h2>One record leads<br />to another.</h2></div><p className="records-deck">Explore actions and statements in context, with direct paths back to the source.</p></div>
-      <div className="record-grid">
-        <article className="topic topic-ink"><span className="topic-num">01 / ACTION</span><div className="topic-icon"><Landmark size={19} /></div><h3>Legislation<br />& votes</h3><p>See bills, executive actions, and recorded votes as distinct parts of the public record.</p><span className="topic-arrow">↗</span></article>
-        <article className="topic topic-paper"><span className="topic-num">02 / MONEY</span><div className="topic-icon"><Search size={19} /></div><h3>Campaign<br />finance</h3><p>Explore reported campaign finances and disclosures, with dates and filing sources attached.</p><span className="topic-arrow">↗</span></article>
-        <article className="topic topic-gold"><span className="topic-num">03 / VOICE</span><div className="topic-icon"><ArrowUpRight size={19} /></div><h3>Endorsements<br />& positions</h3><p>Follow who endorsed whom and what public statements say, with direction and attribution intact.</p><span className="topic-arrow">↗</span></article>
+    <section className="records section-centered" id="records">
+      <p className="eyebrow">FOLLOW A RECORD WHERE IT LEADS</p>
+      <h2>Public actions.<br /><em>In context.</em></h2>
+      <p className="subhead">Start with an official act, a filing, or a public statement. Follow the record without losing its source or its scope.</p>
+      <div className="record-categories">
+        <article><span className="category-icon"><Landmark size={20}/></span><h3>Actions</h3><p>Legislation, executive actions, and recorded votes, shown as separate events.</p></article>
+        <article><span className="category-icon"><Search size={20}/></span><h3>Funding</h3><p>Reported campaign finances and disclosures, with filing dates and source links.</p></article>
+        <article><span className="category-icon"><FileText size={20}/></span><h3>Statements</h3><p>Endorsements in both directions and public positions, attributed to their source.</p></article>
       </div>
-      <div className="coverage-note"><ShieldCheck size={17} /><span>Coverage is growing. Records show their scope, source, and available context.</span><a href={appUrl} target="_blank" rel="noreferrer">Browse the app <ArrowUpRight size={14} /></a></div>
+      <div className="coverage"><ShieldCheck size={17}/><span>Coverage is growing. Each record shows its available source and scope.</span></div>
     </section>
 
-    <section className="closing"><div className="closing-mark"><span className="mark large-mark"><i /><i /><i /></span><span>PUBLIC RECORDS<br />ARE FOR EVERYONE.</span></div><div className="closing-copy"><p className="eyebrow">START WITH THE SOURCE</p><h2>Look closer.<br /><em>Follow through.</em></h2><a className="button-light" href={betaUrl} target="_blank" rel="noreferrer">Join the TestFlight beta <ArrowUpRight size={17} /></a></div><div className="closing-vertical">CIVIC LEDGER · THE PUBLIC RECORD</div></section>
+    <section className="closing section-centered">
+      <p className="eyebrow">START WITH THE SOURCE</p>
+      <h2>Look closer.</h2>
+      <p className="subhead">The public record, connected.</p>
+      <a className="button-primary" href={betaUrl} target="_blank" rel="noreferrer">Join the TestFlight beta <ArrowUpRight size={16}/></a>
+      <div className="closing-record" aria-hidden="true"><span className="closing-column"><i/><i/><i/><i/></span><span className="closing-column"><i/><i/><i/></span><span className="closing-column"><i/><i/><i/><i/><i/></span></div>
+    </section>
 
-    <footer><a className="wordmark footer-brand" href="#top"><span className="mark"><i /><i /><i /></span><span>CIVIC LEDGER</span></a><span>Public information, connected to its source.</span><a href={appUrl} target="_blank" rel="noreferrer">Enter the app <ExternalLink size={13} /></a><small>© {new Date().getFullYear()} Civic Ledger</small></footer>
+    <footer><Wordmark/><span>Public information, connected to its source.</span><a href={appUrl} target="_blank" rel="noreferrer">Open the app <ExternalLink size={13}/></a><small>© {new Date().getFullYear()} Civic Ledger</small></footer>
   </main>;
 }
