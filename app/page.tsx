@@ -19,7 +19,7 @@ export default function Home() {
       <p className="eyebrow">A CLEARER VIEW OF PUBLIC LIFE</p>
       <h1>Follow the public record.</h1>
       <p className="subhead">See what officials do, where the evidence comes from, and how one action connects to another.</p>
-      <div className="link-row"><a className="blue-link" href={betaUrl} target="_blank" rel="noreferrer">Join the TestFlight beta <ArrowUpRight size={16} /></a><a className="blue-link" href="#records">Explore the record <ArrowDown size={15} /></a></div>
+      <div className="link-row"><a className="blue-link" href={betaUrl} target="_blank" rel="noreferrer">Join the TestFlight beta <ArrowUpRight size={16} /></a><a className="blue-link" href="#records">Explore the record <ArrowDown size={15} /></a><a className="blue-link" href={appUrl} target="_blank" rel="noreferrer">Open web client <ArrowUpRight size={16} /></a></div>
       <div className="ledger-stage" aria-label="Civic Ledger record illustration">
         <div className="ledger-halo" />
         <div className="ledger-sheet">
